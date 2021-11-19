@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method='POST' action='/donos'>
+    <legend> New Donation </legend>
+    <p>
+        <label for="dono-name">Your Name</label>
+        <input id='dono-name-input' type="text" name='name'>
+    </p>
+    
+    <p>
+        <label for="dono-charity">What charity are you donating to today?</label>
+        <input id='dono-charity-input' type="text" name='charity'>
+    </p>
+
+    <p>
+        <label for="dono-amount">Amount you would like to give</label>
+        <input id='dono-amount-input' type="number" name='amount'>
+    </p>
+
+    <p>
+        <button type="submit"> Send Donation </button>
+    </p>
+
+
+</form>
+{% endblock %}

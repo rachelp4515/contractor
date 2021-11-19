@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<form method='POST' action='/donos'>
+
+    <h2> Donate again </h2>
+    <h3> Charity:{{ dono.charity }} </h3>
+    <label for="new_amount">New Donation</label>
+    <input type="number" name="amount">
+
+
+    <input type="hidden" value="{{ dono.name }}" name="name">
+    <input type="hidden" value="{{ dono.charity }}" name="charity">
+
+
+    <button type="submit">send donation</button>
+</form>
+{% endblock %}

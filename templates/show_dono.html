@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<a href='/'> Home </a>
+<h1> {{ dono.name }}</h1>
+<h2> {{ dono.charity }} </h2>
+<h2> {{ dono.amount }} </h2>
+<!-- add date and time made? -->
+<p><form method='POST' action='/donos/{{ dono._id }}/delete'>
+    <button type='submit'>Delete</button>
+    <small> NOTE: deleting a donation does not mean a refund, only that the donation will no longer appear in your donations list.</small>
+</form></p>
+{% endblock %}
