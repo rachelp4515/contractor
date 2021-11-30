@@ -1,16 +1,31 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Donations</h1>
-    {% for dono in donos %}
-        <h2><a href="/donos/{{ dono._id }}">{{ dono.name }}</a></h2>
-        <h5>{{ dono.charity }}</h5>
-        <small>{{ dono.amount }}</small>
-        <p>
-            <button>
-                <a href="/donos/{{ dono._id }}/add">+ Donate again</a>
-            </button>
-            
-        </p>
+    <h1 class="text-center m-4">Donations</h1>
+<div class="d-flex justify-content-center">
+<table class=" table table-hover p-5 m-2" style="width: 90vw;">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Charity</th>
+            <th scope="col">Amount</th>
+            <th scope="col"> donate again</th>
+          </tr>
+    </thead>
+
+    <tbody >
+        {% for dono in donos %}
+            <td><a href="/donos/{{ dono._id }}">{{ dono.name }}</a></td>
+            <td>{{ dono.charity }}</td>
+            <td> $ {{ dono.amount }}</td>
+            <td>
+                <button>
+                    <a href="/donos/{{ dono._id }}/add">+ Donate again</a>
+                </button>
+            </td>
+    </tbody> 
     {% endfor %}
+</table>
+</div>
+    
 {% endblock %}

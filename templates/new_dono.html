@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<form method='POST' action='/donos'>
+<div class="d-flex justify-content-center p-5"> 
+<form class='border p-5' method='POST' action='/donos'>
     <legend> New Donation </legend>
     <p>
-        <label for="dono-name">Your Name</label>
-        <input id='dono-name-input' type="text" name='name'>
+        <label for="dono-name">Name you'd like to donate under: </label>
+        <input id='dono-name-input' type="text" value='Rae' name='name'>
     </p>
     
     <p>
@@ -14,14 +15,14 @@
     </p>
 
     <p>
-        <label for="dono-amount">Amount you would like to give</label>
-        <input id='dono-amount-input' type="number" name='amount'>
+        <label for="dono-amount">Amount you would like to give: </label>
+        <input type="number" min='0' placeholder='$' name='amount'>
     </p>
 
     <p>
         <button type="submit"> Send Donation </button>
     </p>
-
-
 </form>
+</div>
+
 {% endblock %}

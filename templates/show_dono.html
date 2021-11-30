@@ -2,13 +2,23 @@
 
 {% block content %}
 
-<a href='/'> Home </a>
-<h1> {{ dono.name }}</h1>
-<h2> {{ dono.charity }} </h2>
-<h2> {{ dono.amount }} </h2>
-<!-- add date and time made? -->
-<p><form method='POST' action='/donos/{{ dono._id }}/delete'>
+<div class="d-flex justify-content-center text-center"> 
+<div class="border p-3 m-3" style="width: fit-content;">
+    <h3> Name you Donated under</h3>
+    <p> {{ dono.name }}</p>
+    <h3>Charity</h3>
+    <p> {{ dono.charity }} </p>
+    <h3>Amount you donated</h3>
+    <p>$ {{ dono.amount }} </p> 
+
+    <p><form method='POST' action='/donos/{{ dono._id }}/delete'>
     <button type='submit'>Delete</button>
-    <small> NOTE: deleting a donation does not mean a refund, only that the donation will no longer appear in your donations list.</small>
-</form></p>
+    </form>
+    <small> NOTE: deleting a donation does not mean a refund, <br> only that the donation will no longer appear in your donations list.</small>
+</p>
+</div>
+
+<!-- add date and time made? -->
+
+</div>
 {% endblock %}
